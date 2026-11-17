@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Hind:wght@400;500&family=Great+Vibes&family=Playfair+Display:wght@700&family=Noto+Serif+Telugu:wght@500;700&family=Noto+Sans+Telugu:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="locked">
+<button class="lang" id="langBtn" type="button" lang="te">తెలుగులో చూడండి</button>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<g id="ganesha-art">
+  <circle cx="50" cy="50" r="46" fill="#c9973b"/><circle cx="50" cy="50" r="42.5" fill="#5a0f1e"/>
+  <circle cx="50" cy="46" r="33" fill="none" stroke="#f0d28a" stroke-width=".8" opacity=".55"/>
+  <path d="M28 84Q50 64 72 84Q62 89 50 89Q38 89 28 84Z" fill="#e8781a"/>
+  <path d="M36 80Q50 90 64 80" fill="none" stroke="#f0d28a" stroke-width="1.6"/><circle cx="50" cy="85" r="2.2" fill="#c62828"/>
+  <ellipse cx="26" cy="46" rx="13" ry="17" fill="#e39a3d"/><ellipse cx="26" cy="46" rx="8" ry="12" fill="#f4b968"/>
+  <ellipse cx="74" cy="46" rx="13" ry="17" fill="#e39a3d"/><ellipse cx="74" cy="46" rx="8" ry="12" fill="#f4b968"/>
+  <ellipse cx="50" cy="48" rx="18" ry="19" fill="#f2b04f"/>
+  <path d="M33 34L35 17L42 25L50 10L58 25L65 17L67 34Z" fill="#ffd86b" stroke="#c9973b" stroke-width="1"/>
+  <circle cx="50" cy="22" r="2.6" fill="#c62828"/><circle cx="41" cy="29" r="1.4" fill="#2e9a3f"/><circle cx="59" cy="29" r="1.4" fill="#2e9a3f"/>
+  <path d="M50 33v7" stroke="#c62828" stroke-width="2" stroke-linecap="round"/><path d="M44.5 36q5.5-3.5 11 0" fill="none" stroke="#fff6e4" stroke-width="1.4" stroke-linecap="round"/>
+  <ellipse cx="42.5" cy="44" rx="2.6" ry="1.6" fill="#fff6e4"/><ellipse cx="57.5" cy="44" rx="2.6" ry="1.6" fill="#fff6e4"/>
+  <circle cx="42.5" cy="44" r="1.2" fill="#3b0a14"/><circle cx="57.5" cy="44" r="1.2" fill="#3b0a14"/>
+  <path d="M39.5 40.5q3-2 6 0M54.5 40.5q3-2 6 0" fill="none" stroke="#7a3b0c" stroke-width="1.1" stroke-linecap="round"/>
+  <path d="M50 46C50 59 47 68 54 74C58.5 78 63 74.5 61 70.5" fill="none" stroke="#d98a2e" stroke-width="10" stroke-linecap="round"/>
+  <path d="M50 46C50 59 47 68 54 74C58.5 78 63 74.5 61 70.5" fill="none" stroke="#f2b04f" stroke-width="7.4" stroke-linecap="round"/>
+  <path d="M49 54q3 1 6 0M48.5 60q3.5 1 7 0M49.5 66q3 1 6 0" fill="none" stroke="#d98a2e" stroke-width=".9" stroke-linecap="round"/>
+  <path d="M58 58L67 67" stroke="#fff6e4" stroke-width="3.4" stroke-linecap="round"/><path d="M42 58L37 63" stroke="#fff6e4" stroke-width="3" stroke-linecap="round"/>
+</g></defs></svg>
+<div class="bgshow" id="bgshow" aria-hidden="true"></div>
+
+<!-- COVER -->
+<div id="cover">
+  <div class="cv-main">
+    <svg class="garland" id="garland" aria-hidden="true"></svg>
+    <svg class="cv-ganesha" style="margin-top:4.5rem" viewBox="0 0 100 100" aria-label="Ganesha"><use href="#ganesha-art"/></svg>
+    <p class="cv-mantra" data-i18n="mantra">|| Sri Ganeshaya Namah ||</p>
+    <div class="gline"></div>
+    <p class="cv-sub" data-i18n="invited">You are invited to the wedding of</p>
+    <h1 id="cvNames"></h1>
+    <p class="guest"><span data-i18n="dear">Dear</span> <span id="guest">Guest</span></p>
+    <button class="obtn" id="openBtn" data-i18n="open">Open invitation</button>
+    <div class="cv-temple"><svg id="cvTemple" viewBox="-300 0 1800 300" aria-hidden="true"></svg></div>
+  </div>
+  <div id="loader" aria-hidden="true"><svg id="ldSvg" viewBox="-100 -100 200 200"></svg></div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="htoran" id="htoran"></div>
+  <div class="hg hgl" id="hgl"></div>
+  <div class="hg hgr" id="hgr"></div>
+  <div class="petals" id="petals" aria-hidden="true"></div>
+  <div class="wrap" style="position:relative;z-index:2">
+    <svg class="ganesha" viewBox="0 0 100 100" aria-label="Ganesha"><use href="#ganesha-art"/></svg>
+    <p class="sub" data-i18n="mantra">|| Sri Ganeshaya Namah ||</p>
+    <p class="sub" data-i18n="invited">You are invited to the wedding of</p>
+    <h1 id="heroNames"></h1>
+  </div>
+<svg class="brahma-mudi" viewBox="0 0 400 270" role="img" aria-label="Brahma Mudi: the bride's pink pallu tied to the groom's cream kanduva">
+    <defs>
+      <linearGradient id="bmPink" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5aa5"/><stop offset=".5" stop-color="#e3166f"/><stop offset="1" stop-color="#a70a52"/></linearGradient>
+      <linearGradient id="bmPinkT" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff3f94"/><stop offset=".55" stop-color="#d90f68"/><stop offset="1" stop-color="#9d0a4c"/></linearGradient>
+      <linearGradient id="bmCream" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff8e6"/><stop offset=".55" stop-color="#f3e2b6"/><stop offset="1" stop-color="#e2c78a"/></linearGradient>
+      <linearGradient id="bmCreamT" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ecd8a2"/><stop offset=".5" stop-color="#fff6dc"/><stop offset="1" stop-color="#e3c98e"/></linearGradient>
+      <linearGradient id="bmGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b98a14"/><stop offset=".5" stop-color="#f4d86c"/><stop offset="1" stop-color="#c79a1e"/></linearGradient>
+      <linearGradient id="bmShine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".5"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+      <radialGradient id="bmGlow"><stop offset="0" stop-color="#ffd86b" stop-opacity=".85"/><stop offset="1" stop-color="#ffd86b" stop-opacity="0"/></radialGradient>
+      <linearGradient id="bmFade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000"/><stop offset=".07" stop-color="#fff"/><stop offset=".93" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient>
+      <mask id="bmMask" maskUnits="userSpaceOnUse" x="0" y="-20" width="400" height="300"><rect x="0" y="-20" width="400" height="300" fill="url(#bmFade)"/></mask>
+      <filter id="bmSoft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.2"/></filter>
+      <pattern id="bmPDots" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(20)"><circle cx="2" cy="2" r="1" fill="#ffd86b" opacity=".85"/><circle cx="6" cy="6" r="1" fill="#ffd86b" opacity=".85"/></pattern>
+      <pattern id="bmCDots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r=".9" fill="#7a5a3a" opacity=".8"/><circle cx="10" cy="10" r=".9" fill="#7a5a3a" opacity=".8"/></pattern>
+      <path id="bmL" d="M-4 4 C60 8 132 54 200 100 L200 120 C120 118 50 116 -4 108 Z"/>
+      <path id="bmR" d="M204 100 C270 62 340 20 404 -4 L404 70 C340 100 270 118 204 120 Z"/>
+      <path id="bmPT" d="M186 118 C182 150 174 188 160 222 L184 234 L202 246 C206 200 208 160 208 122 Z"/>
+      <path id="bmCT" d="M206 124 C198 160 196 210 198 242 C208 252 216 244 226 250 C238 258 250 248 264 252 C262 232 244 190 228 160 C220 144 214 134 212 124 Z"/>
+      <clipPath id="bmClipL"><use href="#bmL"/></clipPath>
+      <clipPath id="bmClipR"><use href="#bmR"/></clipPath>
+      <clipPath id="bmClipPT"><use href="#bmPT"/></clipPath>
+      <clipPath id="bmClipCT"><use href="#bmCT"/></clipPath>
+    </defs>
+
+    <g mask="url(#bmMask)">
+      <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;.04;.9;.98;1" dur="9s" repeatCount="indefinite"/>
+
+      <!-- BRIDE'S PINK PALLU (from left) -->
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="-130 0;0 0;0 0;-130 0" keyTimes="0;.22;.9;1" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines=".25 .1 .2 1;0 0 1 1;.5 0 .7 1"/>
+        <g>
+          <animateTransform attributeName="transform" type="rotate" values="-1.4 200 108;1.4 200 108;-1.4 200 108" keyTimes="0;.5;1" dur="4.5s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/>
+          <g clip-path="url(#bmClipL)">
+            <use href="#bmL" fill="url(#bmPink)"/>
+            <use href="#bmL" fill="url(#bmPDots)"/>
+            <g fill="none" stroke-linecap="round" filter="url(#bmSoft)">
+              <path d="M10 30 C70 38 120 70 190 106" stroke="#fff" stroke-opacity=".3" stroke-width="9"/>
+              <path d="M10 62 C70 70 120 92 190 110" stroke="#fff" stroke-opacity=".18" stroke-width="7"/>
+              <path d="M0 86 C60 92 110 102 190 116" stroke="#7a0638" stroke-opacity=".35" stroke-width="8"/>
+            </g>
+            <g fill="#ffd86b"><circle cx="30" cy="40" r="3.2"/><circle cx="72" cy="30" r="2.6"/><circle cx="52" cy="84" r="3"/><circle cx="108" cy="68" r="2.8"/><circle cx="92" cy="98" r="2.4"/><circle cx="148" cy="92" r="2.6"/></g>
+            <g transform="skewX(-22)"><rect y="-20" width="46" height="170" fill="url(#bmShine)"><animateTransform attributeName="transform" type="translate" values="-90 0;-90 0;260 0;260 0" keyTimes="0;.5;.7;1" dur="9s" repeatCount="indefinite"/></rect></g>
+          </g>
+          <path d="M-4 18 C58 22 126 64 196 106" fill="none" stroke="url(#bmGold)" stroke-width="3.6"/>
+          <path d="M-4 98 C50 106 120 109 196 112" fill="none" stroke="url(#bmGold)" stroke-width="3.6"/>
+          <g fill="none" stroke-linecap="round" stroke-dasharray="0.1 6.6">
+            <path d="M-4 4 C60 8 132 54 200 100" stroke="#e8c04e" stroke-width="5"/>
+            <path d="M-4 108 C50 116 120 118 200 120" stroke="#e8c04e" stroke-width="5"/>
+            <path d="M-4.8 3.2 C59.2 7.2 131.2 53.2 199.2 99.2" stroke="#fff3b8" stroke-width="1.8"/>
+            <path d="M-4.8 107.2 C49.2 115.2 119.2 117.2 199.2 119.2" stroke="#fff3b8" stroke-width="1.8"/>
+          </g>
+        </g>
+      </g>
+
+      <!-- GROOM'S CREAM KANDUVA (from right) -->
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="130 0;0 0;0 0;130 0" keyTimes="0;.22;.9;1" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines=".25 .1 .2 1;0 0 1 1;.5 0 .7 1"/>
+        <g>
+          <animateTransform attributeName="transform" type="rotate" values="1.4 200 108;-1.4 200 108;1.4 200 108" keyTimes="0;.5;1" dur="4.5s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/>
+          <g clip-path="url(#bmClipR)">
+            <use href="#bmR" fill="url(#bmCream)"/>
+            <use href="#bmR" fill="url(#bmCDots)"/>
+            <g fill="none" stroke-linecap="round" filter="url(#bmSoft)">
+              <path d="M214 98 C280 72 340 36 400 6" stroke="#fff" stroke-opacity=".6" stroke-width="10"/>
+              <path d="M214 112 C280 104 340 84 400 56" stroke="#c9a05f" stroke-opacity=".38" stroke-width="8"/>
+              <path d="M230 106 C290 92 350 60 400 30" stroke="#fff" stroke-opacity=".35" stroke-width="5"/>
+            </g>
+            <g transform="skewX(-22)"><rect y="-20" width="46" height="170" fill="url(#bmShine)"><animateTransform attributeName="transform" type="translate" values="190 0;190 0;470 0;470 0" keyTimes="0;.55;.75;1" dur="9s" repeatCount="indefinite"/></rect></g>
+          </g>
+          <path d="M204 100 C270 62 340 20 404 -4" fill="none" stroke-width="6" stroke-linecap="round" style="stroke:#d3a566"/>
+          <path d="M204 120 C270 118 340 100 404 70" fill="none" stroke-width="6" stroke-linecap="round" style="stroke:#d9b074"/>
+          <path d="M206 97 C271 60 340 18 404 -7" fill="none" stroke="#f2dcae" stroke-width="1.4" opacity=".8"/>
+        </g>
+      </g>
+
+      <!-- TAILS drop down once the knot is tied -->
+      <g transform="translate(200,122)">
+        <g>
+          <animateTransform attributeName="transform" type="scale" values="1 0;1 0;1 1.05;1 1;1 1;1 0" keyTimes="0;.3;.4;.45;.9;1" dur="9s" repeatCount="indefinite"/>
+          <g transform="translate(-200,-122)">
+            <!-- pink tail -->
+            <g>
+              <animateTransform attributeName="transform" type="rotate" values="-3 196 124;3 196 124;-3 196 124" keyTimes="0;.5;1" dur="3.4s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/>
+              <g clip-path="url(#bmClipPT)">
+                <use href="#bmPT" fill="url(#bmPinkT)"/>
+                <use href="#bmPT" fill="url(#bmPDots)"/>
+                <g fill="none" stroke-linecap="round" filter="url(#bmSoft)">
+                  <path d="M190 140 C188 170 182 195 172 214" stroke="#fff" stroke-opacity=".3" stroke-width="6"/>
+                  <path d="M200 150 C201 180 202 215 200 240" stroke="#5a0430" stroke-opacity=".35" stroke-width="7"/>
+                </g>
+              </g>
+              <path d="M196 126 C192 154 186 188 176 220" fill="none" stroke="url(#bmGold)" stroke-width="3.2"/>
+              <g fill="none" stroke-linecap="round" stroke-dasharray="0.1 6.4">
+                <path d="M186 118 C182 150 174 188 160 222 L184 234 L202 246" stroke="#e8c04e" stroke-width="5"/>
+                <path d="M185.2 117.2 C181.2 149.2 173.2 187.2 159.2 221.2 L183.2 233.2 L201.2 245.2" stroke="#fff3b8" stroke-width="1.8"/>
+              </g>
+            </g>
+            <!-- cream tail -->
+            <g>
+              <animateTransform attributeName="transform" type="rotate" values="2.5 206 124;-2.5 206 124;2.5 206 124" keyTimes="0;.5;1" dur="3.4s" begin="-.9s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/>
+              <g clip-path="url(#bmClipCT)">
+                <use href="#bmCT" fill="url(#bmCreamT)"/>
+                <use href="#bmCT" fill="url(#bmCDots)"/>
+                <g fill="none" stroke-linecap="round" filter="url(#bmSoft)">
+                  <path d="M218 132 C226 160 236 190 246 214" stroke="#fff" stroke-opacity=".7" stroke-width="7"/>
+                  <path d="M208 150 C214 180 230 212 246 240" stroke="#c9a05f" stroke-opacity=".4" stroke-width="6"/>
+                </g>
+              </g>
+              <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M264 252 C262 232 244 190 228 160 C220 144 214 134 212 124" stroke="#d3a566" stroke-width="5"/>
+                <path d="M198 242 C208 252 216 244 226 250 C238 258 250 248 264 252" stroke="#d3a566" stroke-width="4"/>
+                <path d="M206 124 C198 160 196 210 198 242" stroke="#d3a566" stroke-width="2.6"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+
+      <!-- KNOT -->
+      <g transform="translate(200,108)">
+        <g>
+          <animateTransform attributeName="transform" type="scale" values="0;0;1.25;.94;1;1;0" keyTimes="0;.3;.38;.43;.48;.9;1" dur="9s" repeatCount="indefinite"/>
+          <g transform="translate(-200,-108)">
+            <ellipse cx="200" cy="113" rx="27" ry="31" fill="#000" opacity=".16" filter="url(#bmSoft)"/>
+            <!-- pink tuft above-left -->
+            <path d="M182 98 C176 80 184 64 198 62 C212 60 218 72 212 88 C208 96 192 102 182 98Z" fill="url(#bmPinkT)"/>
+            <path d="M182 98 C176 80 184 64 198 62 C212 60 218 72 212 88 C208 96 192 102 182 98Z" fill="url(#bmPDots)"/>
+            <path d="M182 98 C176 80 184 64 198 62 C212 60 218 72 212 88" fill="none" stroke="#e8c04e" stroke-width="3.6" stroke-linecap="round" stroke-dasharray="0.1 5"/>
+            <path d="M188 90 C186 78 192 70 200 68" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="3" stroke-linecap="round"/>
+            <!-- cream flap above-right -->
+            <path d="M203 86 C203 70 216 64 230 68 C244 72 238 88 226 94 C216 99 206 98 203 86Z" fill="url(#bmCream)" stroke="#d3a566" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M203 86 C203 70 216 64 230 68 C244 72 238 88 226 94 C216 99 206 98 203 86Z" fill="url(#bmCDots)"/>
+            <path d="M213 72 C215 80 217 88 215 95 M224 70 C228 78 228 86 224 94" fill="none" stroke="#c9a05f" stroke-opacity=".6" stroke-width=".9" stroke-linecap="round"/>
+            <!-- pink bulge + cream ring -->
+            <ellipse cx="191" cy="108" rx="13" ry="19" fill="url(#bmPinkT)"/>
+            <ellipse cx="191" cy="108" rx="13" ry="19" fill="url(#bmPDots)"/>
+            <path d="M184 96 C182 106 184 116 188 123" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="3" stroke-linecap="round"/>
+            <ellipse cx="205" cy="108" rx="16" ry="22" fill="url(#bmCreamT)" stroke="#c99a5b" stroke-width="2.2"/>
+            <ellipse cx="209" cy="108" rx="9" ry="15" fill="#efd9a0" stroke="#d8b678" stroke-width="1.4"/>
+            <path d="M198 94 C194 102 194 114 198 122" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="2.6" stroke-linecap="round"/>
+            <ellipse cx="200" cy="108" rx="22" ry="27" fill="none" stroke="#b9a98a" stroke-width="1.2" opacity=".6"/>
+          </g>
+        </g>
+      </g>
+
+      <!-- glow + sparkles once tied -->
+      <circle cx="200" cy="108" r="52" fill="url(#bmGlow)" opacity="0">
+        <animate attributeName="opacity" values="0;0;.9;.2;.6;.2;0;0" keyTimes="0;.36;.42;.55;.65;.75;.9;1" dur="9s" repeatCount="indefinite"/>
+      </circle>
+      <g fill="#ffd86b">
+        <path d="M160 60l2.5 6 6 2.5-6 2.5-2.5 6-2.5-6-6-2.5 6-2.5z"><animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;.4;.48;.58;1" dur="9s" repeatCount="indefinite"/></path>
+        <path d="M248 52l2 4.8 4.8 2-4.8 2-2 4.8-2-4.8-4.8-2 4.8-2z"><animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;.44;.52;.62;1" dur="9s" repeatCount="indefinite"/></path>
+        <path d="M200 34l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"><animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;.42;.5;.6;1" dur="9s" repeatCount="indefinite"/></path>
+        <path d="M262 132l1.8 4.2 4.2 1.8-4.2 1.8-1.8 4.2-1.8-4.2-4.2-1.8 4.2-1.8z"><animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;.48;.56;.66;1" dur="9s" repeatCount="indefinite"/></path>
+        <path d="M140 138l1.8 4.2 4.2 1.8-4.2 1.8-1.8 4.2-1.8-4.2-4.2-1.8 4.2-1.8z"><animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;.46;.54;.64;1" dur="9s" repeatCount="indefinite"/></path>
+      </g>
+    </g>
+  </svg>
+</section>
+
+<!-- BLESSING -->
+<section>
+  <div class="wrap rv">
+    <p class="quote" data-i18n="quote">“Two hearts united, one beautiful journey begins. Wishing you a lifetime of togetherness.”</p>
+    <div class="divider"></div>
+    <p data-i18n="together">With the blessings of our family</p>
+    <h2 id="bNames" style="margin-top:1rem"></h2>
+    <p data-i18n="cordial">We are getting married! Join us as we begin our new journey together and celebrate our wedding with your love and blessings.</p>
+    <div class="divider"></div>
+    <p data-i18n="vow" style="font-style:italic;max-width:640px;margin:1rem auto 0">Marriage is not just the joining of two hearts, but the union of two souls and two families &mdash; a promise to walk together through every season of life, with love, trust and respect.</p>
+    <p data-i18n="steps" style="color:var(--saffron);font-weight:500;margin-top:.8rem">Seven steps, seven vows &mdash; one lifetime together.</p>
+  </div>
+</section>
+
+<!-- COUPLE -->
+<section id="couple">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs id="wdefs"></defs></svg>
+  <div class="wrap rv">
+    <h2 data-i18n="about">About the Couple</h2><div class="gline"></div>
+    <div class="couple">
+      <div class="person"><div id="bPhoto"></div><h3 id="brName"></h3><p class="rel" data-i18n="daughter">Daughter of</p><p class="par" id="brPar"></p></div>
+      <div class="amp">&amp;</div>
+      <div class="person"><div id="gPhoto"></div><h3 id="gName"></h3><p class="rel" data-i18n="son">Son of</p><p class="par" id="gPar"></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section>
+  <div class="wrap rv">
+    <h2 data-i18n="events">Wedding Events</h2><div class="divider"></div>
+    <div class="events" id="events"></div>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<section class="dark">
+  <div class="wrap rv">
+    <p data-i18n="countkick">Counting down to</p>
+    <h2 data-i18n="special">Our Special Day</h2><div class="divider"></div>
+    <div class="count" id="count"></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="moments">
+  <div class="wrap rv">
+    <h2 data-i18n="moments">Captured Moments</h2><div class="divider"></div>
+    <div class="fan" id="fan" role="group" aria-roledescription="carousel" aria-label="Wedding photos"></div>
+    <div class="fanNav"><button class="arr" id="prev" aria-label="Previous photo">&#8249;</button><div class="dots" id="dots"></div><button class="arr" id="next" aria-label="Next photo">&#8250;</button></div>
+  </div>
+</section>
+
+<!-- INVITING BY -->
+<section class="dark" id="invby">
+  <div class="wrap rv invwrap">
+    <div class="invtext">
+      <p class="invkick" data-i18n="invkick">With the blessings of our families</p>
+      <h2 data-i18n="invby">Inviting by</h2><div class="gline" style="margin-left:0"></div>
+      <div class="invlist" id="invList"></div>
+      <p class="invnote" data-i18n="invnote">Your presence and blessings will make our celebration complete.</p>
+    </div>
+    <div class="invphoto" id="invPhoto"></div>
+  </div>
+</section>
+
+<!-- VENUE -->
+<section>
+  <div class="wrap rv" style="max-width:760px">
+    <h2 data-i18n="when">When &amp; Where</h2><div class="divider"></div>
+    <h3 id="vName" style="font-size:1.8rem"></h3>
+    <p id="vAddr"></p>
+    <p style="margin:.8rem 0"><a class="btn" id="vDir" target="_blank" rel="noopener" data-i18n="dir">Get directions</a></p>
+    <div class="frame map"><iframe id="vMap" title="Venue map" loading="lazy"></iframe></div>
+  </div>
+</section>
+
+<!-- SHARE -->
+<section class="dark">
+  <div class="wrap rv">
+    <h3 style="color:var(--gold2)" data-i18n="share">Share this invitation</h3>
+    <div class="share">
+      <button class="btn ghost" id="shCard" data-i18n="card">Wedding card</button>
+      <button class="btn ghost" id="shCal" data-i18n="cal">Add to Google Calendar</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="divider" style="margin-top:0"></div>
+  <div class="fwrap">
+    <svg class="fganesha" viewBox="0 0 100 100" aria-hidden="true"><use href="#ganesha-art"/></svg>
+    <p class="fkick" data-i18n="thanks">Thank you for being a part of our joy</p>
+    <h3 id="fNames"></h3>
+    <div class="fdiv"><i></i><span>&#10084;</span><i></i></div>
+    <div class="flinks">
+      <a href="#couple" data-i18n="fCouple">Couple</a><a href="#invby" data-i18n="fInv">Inviting by</a><a href="#moments" data-i18n="fMoments">Moments</a>
+    </div>
+    <p class="fsmall" data-i18n="mantra">|| Sri Ganeshaya Namah ||</p>
+  </div>
+</footer>
+
+<div id="cardLb" class="lb" role="dialog" aria-modal="true" aria-label="Wedding card" hidden>
+  <button class="lbx" id="cardClose" aria-label="Close">&times;</button>
+  <div class="lbstage" id="cardStage"></div>
+</div>
+
+<div id="lb" class="lb" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+  <button class="lbx" id="lbClose" aria-label="Close">&times;</button>
+  <button class="lbn l" id="lbPrev" aria-label="Previous photo">&#8249;</button>
+  <div class="lbstage" id="lbStage"></div>
+  <button class="lbn r" id="lbNext" aria-label="Next photo">&#8250;</button>
+  <p class="lbc" id="lbCount"></p>
+</div>
+
+<audio id="bgm" loop preload="auto"></audio>
+<button class="mute" id="mute" aria-label="Pause music" aria-pressed="true" hidden>
+  <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
